@@ -1,9 +1,6 @@
 package br.com.tmsolutions.dscatalog.entities;
 
-import org.dom4j.swing.XMLTableColumnDefinition;
-
 import javax.persistence.*;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;

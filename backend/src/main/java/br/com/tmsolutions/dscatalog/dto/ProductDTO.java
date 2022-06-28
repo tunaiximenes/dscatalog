@@ -3,10 +3,6 @@ package br.com.tmsolutions.dscatalog.dto;
 import br.com.tmsolutions.dscatalog.entities.Category;
 import br.com.tmsolutions.dscatalog.entities.Product;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
