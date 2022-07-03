@@ -27,9 +27,8 @@ public class ProductServiceIT {
     private Long nonExistingId;
     private Long countTotalProducts;
 
-
     @BeforeEach
-    void Setup() throws Exception {
+    void setUp() throws Exception {
         existingId = 1L;
         nonExistingId = 1000L;
         countTotalProducts = 25L;
@@ -41,11 +40,10 @@ public class ProductServiceIT {
         service.delete(existingId);
 
         Assertions.assertEquals(countTotalProducts - 1, repository.count());
-
     }
 
     @Test
-    public void deleteShouldThrowResourceNotFoundExceptionWhenIdDoesNotExists() {
+    public void deleteShouldThrowResourceNotFoundExceptionWhenIdDoesNotExist() {
 
         Assertions.assertThrows(ResourceNotFoundException.class, () -> {
             service.delete(nonExistingId);
@@ -83,7 +81,8 @@ public class ProductServiceIT {
         Page<ProductDTO> result = service.findAllPaged(pageRequest);
 
         Assertions.assertFalse(result.isEmpty());
-
-
+        Assertions.assertEquals("Macbook Pro", result.getContent().get(0).getName());
+        Assertions.assertEquals("PC Gamer", result.getContent().get(1).getName());
+        Assertions.assertEquals("PC Gamer Alfa", result.getContent().get(2).getName());
     }
 }
